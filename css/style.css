@@ -1,0 +1,257 @@
+/* استيراد خط كابيرو */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+:root {
+    --main-red: #e21f26;
+    --glass-white: rgba(255, 255, 255, 0.9);
+    --dark-red: #b3161b;
+}
+
+
+/* --- تنسيق الشعار (Logo) --- */
+.logo-upload-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border: 2px dashed #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.logo-upload-container:hover {
+    border-color: var(--main-red);
+}
+
+.logo-preview {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+    z-index: 2;
+}
+
+.logo-hint {
+    font-size: 10px;
+    color: #888;
+    text-align: center;
+    z-index: 1;
+}
+
+/* --- تنسيق بطاقات الأقسام المفتوحة --- */
+.category-card {
+    position: relative;
+    height: 380px;
+    border-radius: 30px;
+    background: #f0f0f0;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* زر التعديل المقيد (The Restricted Trigger) */
+.edit-btn-trigger {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    /* جهة اليسار لأن الكتابة عربي */
+    width: 45px;
+    height: 45px;
+    background: var(--main-red);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    border: 3px solid white;
+}
+
+.edit-btn-trigger:hover {
+    transform: rotate(15deg) scale(1.1);
+    background: #333;
+}
+
+.cat-label-badge {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 25px;
+    border-radius: 15px;
+    font-weight: bold;
+    color: var(--main-red);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hidden-input {
+    display: none;
+}
+
+/* تصميم كرت القسم المطور */
+.upload-card {
+    position: relative;
+    height: 350px;
+    border-radius: 25px;
+    overflow: hidden;
+    background: #eee;
+    border: 3px dashed #ccc;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-card:hover {
+    border-color: var(--main-red);
+    transform: scale(1.02);
+}
+
+/* الصورة المعروضة */
+.preview-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    display: none;
+    /* تخفى حتى يتم اختيار صورة */
+}
+
+/* واجهة الرفع */
+.upload-overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    background: var(--glass-white);
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.upload-overlay i {
+    font-size: 2.5rem;
+    color: var(--main-red);
+    margin-bottom: 10px;
+}
+
+/* إخفاء الـ Input الفعلي */
+.file-input {
+    display: none;
+}
+
+.category-label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+    background: var(--main-red);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-mini {
+    background: linear-gradient(135deg, #e21f26 0%, #8b1216 100%);
+    color: white;
+    padding: 60px 0;
+    border-radius: 0 0 40px 40px;
+    margin-bottom: 50px;
+}
+
+
+body {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: right;
+    background-color: #fcfcfc;
+}
+
+.bg-main-red {
+    background-color: var(--main-red) !important;
+}
+
+.text-main-red {
+    color: var(--main-red) !important;
+}
+
+/* تصميم الدوائر في الصفحة الرئيسية */
+.category-circle {
+    width: 80px;
+    height: 80px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.category-link {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.category-link:hover .category-circle {
+    background: white;
+    color: var(--main-red);
+}
+
+/* بطاقات المنتجات */
+.product-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-img-holder {
+    height: 180px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-main {
+    background-color: var(--main-red);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.btn-main:hover {
+    color: white;
+    background-color: var(--dark-red);
+}
+
+.table-custom {
+    border: 2px solid var(--main-red);
+}
+
+.table-custom th {
+    border-bottom: 2px solid var(--main-red);
+}
